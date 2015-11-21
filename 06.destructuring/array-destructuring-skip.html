@@ -1,0 +1,32 @@
+<html>
+
+	<head>
+
+		<title>06.Destructuring - skip</title>
+
+	</head>
+
+
+	<body>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser-polyfill.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+		
+		<script type="text/babel">
+
+
+			var [,,,,,,,,] = [1,2,3,4,5,6,7,8,9];
+			// plaats a en b op de juiste plek
+
+			
+			console.assert(a === 3, "a moet 3 zijn");
+			console.assert(b === 9, "b moet 9 zijn");
+
+
+
+		</script>
+
+	</body>
+
+</html>

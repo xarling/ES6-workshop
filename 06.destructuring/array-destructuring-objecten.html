@@ -1,0 +1,50 @@
+<html>
+
+	<head>
+
+		<title>06.Destructuring - objecten</title>
+
+	</head>
+
+
+	<body>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser-polyfill.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+		
+		<script type="text/babel">
+
+
+			let sophie = { naam: 'Sophie' }
+			let nina = { naam: 'Nina' }
+
+			let {naam: naamSophie} = sophie;
+			let {naam: naamNina} = nina;
+
+			console.log(naamSophie);
+			console.log(naamNina);
+
+
+			let persoon = {
+				voornaam: 'Albert',
+				achternaam: 'Hein',
+				geboortedatum: {
+					dag: 1,
+					maand: 4,
+					jaar: 1932
+				}
+			}
+
+			//plaats hier de uitwerking
+
+			console.assert(voornaam === 'Albert');
+			console.assert(geboorteDag === 1);
+			console.assert(geboorteJaar === 1932);
+
+
+		</script>
+
+	</body>
+
+</html>

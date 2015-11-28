@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>09.Promises</title>
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser-polyfill.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+		
+		<script type="text/babel">
+
+
+			
+			function haalWaardeOp() {
+				return new Promise(function(resolve, reject) {
+					
+				});
+			}
+
+			function haalWaardePlusTweeOp() {
+				return haalWaardeOp().then(function(result) {
+					return hierMoetenWeEchteCodePlaatsen;
+				})
+			}
+
+
+			haalWaardePlusTweeOp().then(function(result) {
+				console.assert(result === 4);
+				console.log(result);
+			});
+
+
+		
+
+
+
+		</script>
+	</body>
+</html>
+

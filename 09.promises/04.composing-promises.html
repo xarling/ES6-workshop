@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>09.Promises</title>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser-polyfill.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+    
+    <script type="text/babel">
+
+
+      let promise = new Promise(function(resolve, reject) {
+          setTimeout(function() {
+            resolve("Dit zou na 3 seconden moeten verschijnen.");
+          }, 3000);
+      });
+
+      let promise2 = new Promise(function(resolve, reject) {
+          setTimeout(function() {
+            resolve("Dit zou ook na 3 seconden moeten verschijnen.");
+          }, 1000);
+      });
+
+
+      Promise.all([promise, promise2]).then(function(results) {
+        results.forEach(function(item) {
+          console.log(item);
+        });
+      }).catch(function(err) {
+        console.log("Failed:", err);
+      });
+
+
+
+
+      // race
+
+      promise = new Promise(function(resolve, reject) {
+          setTimeout(function() {
+            resolve("Dit zou niet moeten verschijnen.");
+          }, 3000);
+      });
+
+      promise2 = new Promise(function(resolve, reject) {
+          setTimeout(function() {
+            resolve("Dit zou na 1 seconde moeten verschijnen.");
+          }, 1000);
+      });
+
+      Promise.race([promise, promise2]).then(function(result) {
+          console.log(result);
+      }); 
+
+    </script>
+  </body>
+</html>
+

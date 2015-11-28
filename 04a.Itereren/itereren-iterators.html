@@ -1,0 +1,40 @@
+<html>
+
+<head>
+
+    <title>04.Array.prototype.findIndex</title>
+
+</head>
+
+
+<body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser-polyfill.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+
+<script type="text/babel">
+
+    var myMap = new Map();
+    myMap.set('key1', 'value1');
+    myMap.set('key2', 'value2');
+    myMap.set('value1', 'key1');
+
+
+    // schrijf een functie die alle key/value paren omdraait van de map myMap
+
+
+
+
+    // controles
+    console.assert(myMap.size === 3, 'We hebben 3 elementen');
+    console.assert(myMap.get('value1') === 'key1', 'value1/key1 is aanwezig');
+    console.assert(myMap.get('value2') === 'key2', 'value2/key2 is aanwezig');
+    console.assert(myMap.get('key1') === 'value1', 'key1/value1 is aanwezig');
+
+
+</script>
+
+</body>
+
+</html>

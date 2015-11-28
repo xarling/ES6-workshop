@@ -1,0 +1,53 @@
+<html>
+
+	<head>
+
+		<title>05.Spread operator</title>
+
+	</head>
+
+
+	<body>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser-polyfill.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+
+		<script type="text/babel">
+
+
+            // VOORBEELD:
+
+            // een array kunnen we filteren
+            var arr=[4,3,2,1];
+            var filteredArray = arr.filter(function(value) {
+                return value < 3;
+            });
+
+            // Zodat de filteredArray === [2,1]
+            console.assert(filteredArray.length === 2, 'filteredArray === [2, 1]');
+            console.assert(filteredArray[0] === 2, 'filteredArray[0] === 2');
+            console.assert(filteredArray[1] === 1, 'filteredArray[1] === 1');
+
+
+            // OPDRACHT:
+            // bij een Set bestaat die methode niet.
+            // Doe hetzelfde voor mySet en gebruik de spread operator
+            var mySet = new Set();
+            mySet.add(4).add(3).add(2).add(1);
+
+            var filterSet = function ( ) {
+                // jouw code hier
+            };
+
+
+            // controles
+            var filteredSet = filterSet(mySet,2);
+            console.assert(filteredSet.size === 2, 'de set heeft 2 elementen');
+            console.assert(filteredSet.has(1) === true, 'De set bevat \'2\'');
+            console.assert(filteredSet.has(2) === true, 'De set bevat \'2\'');
+		</script>
+
+	</body>
+
+</html>

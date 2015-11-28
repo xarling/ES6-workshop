@@ -1,0 +1,35 @@
+<html>
+
+	<head>
+
+		<title>03.Tagged templates</title>
+
+	</head>
+
+
+	<body>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser-polyfill.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+		<script type="text/babel">
+
+            var naam = 'Roel';
+            var namen =['Roel', 'Xander', 'Sebastiaan'];
+
+            // codeer onderstaande.
+            // Voor de experts: gebruik rest parameters en template strings
+
+            var transformTemplate = function(  ) {
+                // insert code
+            };
+
+            // controles
+            console.assert(transformTemplate`hallo ${naam}` === 'Tot ziens Roel', 'invoer string, template getransformeerd');
+            console.assert(transformTemplate`hallo ${namen}` === 'Tot ziens Roel,Xander,Sebastiaan', 'invoer array, template getransformeerd');
+
+		</script>
+
+	</body>
+
+</html>

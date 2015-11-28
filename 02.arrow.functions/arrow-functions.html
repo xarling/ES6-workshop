@@ -1,0 +1,40 @@
+<html>
+
+	<head>
+
+		<title>02.Arrow functions</title>
+
+	</head>
+
+
+	<body>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser-polyfill.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+
+		<script type="text/babel">
+
+
+			// 1. fix deze arrow-functie
+            var add = (a, b) => {a + b};
+            var resultAdd = add(100,14);
+
+            console.assert(resultAdd === 114, 'het resultaat van de optelling moet 114 zijn');
+
+
+
+            // 2. fix deze arrow functie
+            // We willen een object literal returnen
+            // Dit kan op 2 manieren.
+
+            var makeCar = () => {type: 'Skoda', color: 'Silver'};
+            var niceCar = makeCar();
+
+			console.assert(niceCar.type === 'Skoda', 'niceCar moet een property \'type\' hebben met de waarde \'Skoda\'');
+
+		</script>
+
+	</body>
+
+</html>

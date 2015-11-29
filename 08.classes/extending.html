@@ -1,0 +1,74 @@
+<html>
+
+	<head>
+
+		<title>08.Extending</title>
+
+	</head>
+
+
+	<body>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser-polyfill.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+		
+		<script type="text/babel">
+
+			class Voertuig {
+
+				constructor(merk, type, bouwjaar, aantalWielen) {
+					this._merk = merk;
+					this._type = type;
+					this._bouwjaar = bouwjaar;
+					this._aantalWielen = aantalWielen;
+				}
+
+
+				get bouwjaar() {
+					return this._bouwjaar;
+				}
+
+
+				// implementeer zelf de rest van de getters.
+			}
+
+			class Auto extends Voertuig {
+
+				// implementeer hier isOldTimer
+
+				get oldTimerLeeftijd() {
+					return 25;
+				}
+
+				get ditJaar() {
+					return new Date().getFullYear();
+				}
+
+			}
+
+
+			// voeg hier de Motor class toe
+
+			let auto = new Auto('Ford', 'Focus', 1995, 4);
+			console.assert(auto.isOldTimer() === false);
+
+
+			let motor = new Motor('Ducati', 'Monster', 2013, 2);
+
+			console.assert(motor.isZijSpan() === false);
+
+			let zijspan = new Motor('Een', 'Zijspan', 2013, 3);
+
+			console.assert(zijspan.isZijSpan() === true);
+
+			let geconverteerdeAuto = Auto.converteerNaarMotor(auto);
+
+			console.assert(geconverteerdeAuto.aantalWielen === 2);
+
+
+		</script>
+
+	</body>
+
+</html>

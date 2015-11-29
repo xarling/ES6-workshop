@@ -51,6 +51,16 @@
           console.log(result);
       }); 
 
+
+      var exceptionPromise = new Promise((resolve, reject) => {  
+        resolve(4);
+      });
+
+      exceptionPromise.then((val) => val + 2)  
+       .then((val) => { throw new Error("step 2 failed!") }) 
+       .then((val) => console.log("got", val))
+       .catch((err) => console.log("error: ", err.message));
+
     </script>
   </body>
 </html>

@@ -7,44 +7,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
     <script type="text/babel">
 
-      var p0 = new Promise((resolve, reject) => {  
-        if (true)  
-          reject("rejected!"); // same as rejection
-        else
+      var p0 = new Promise(function(resolve, reject) {  
+        if (true) {
+          reject("rejected!");
+        }
+        else {
           resolve(4);
+        }
       });
 
-      p0.then((val) => val + 2)  
-       .then((val) => console.log("got", val))
-       .catch((err) => console.log("error: ", err));
+      p0.then(function(val) {
+        // zou hier niet moeten komen
+        console.assert(false);
+      }).catch(function(err) {
+        console.assert(err === "rejected!");
+      });
 
 
 
       var p1 = new Promise((resolve, reject) => {  
-        if (true)  
-          throw new Error("rejected!"); // same as rejection
-        else
+        if (true) {
+          // gooi hier een exception
+        }
+        else {
           resolve(4);
+        }
       });
 
 
-      p1.then((val) => val + 2)  
-       .then((val) => console.log("got", val))
-       .catch((err) => console.log("error: ", err.message));
+      p1.then((val) => console.assert(false))
+       .catch((err) => console.log(err.message === "rejected!"));
 
 
 
-      var p2 = new Promise((resolve, reject) => {  
-        resolve(4);
-      });
-
-      // Second .then throws error, .catch() still handles it
-      // as rejection anywhere in the processing chain of promise
-      p2.then((val) => val + 2)  
-       .then((val) => { throw new Error("step 2 failed!") }) 
-       .then((val) => console.log("got", val))
-       .catch((err) => console.log("error: ", err.message));
-      // => error: step 2 failed!
+ 
 
 
     </script>

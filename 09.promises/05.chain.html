@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>09.Promises</title>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser-polyfill.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+    
+    <script type="text/babel">
+
+      let persoonPromise = new Promise(function(resolve, reject) {
+      	let persoon = {
+        	id: 1,
+          	voornaam: 'Albert',
+          	achternaam: 'Hein'
+        };
+
+        resolve(persoon);
+      });
+
+
+      persoonPromise.then(function(persoon) {
+      	console.log('Persoon opgehaald');
+
+      	var adresPromise = new Promise(function(resolve, reject) {
+          	let adres = {
+          		id: 2,
+          		straat: 'Achterste',
+          		huisnummer: 3
+          	};
+	        resolve(adres);
+      	});
+      	return adresPromise;
+      }).then(function(adres) {
+      	console.log("Adres opgehaald");
+      	
+      });
+
+
+    </script>
+  </body>
+</html>
+

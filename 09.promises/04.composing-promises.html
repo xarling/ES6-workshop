@@ -9,57 +9,19 @@
     <script type="text/babel">
 
 
-      let promise = new Promise(function(resolve, reject) {
-          setTimeout(function() {
-            resolve("Dit zou na 3 seconden moeten verschijnen.");
-          }, 3000);
-      });
+      let kinderenPromise = // implementatie hier
 
-      let promise2 = new Promise(function(resolve, reject) {
-          setTimeout(function() {
-            resolve("Dit zou ook na 3 seconden moeten verschijnen.");
-          }, 1000);
-      });
+      let autoPromise =  // implementatie hier
 
 
-      Promise.all([promise, promise2]).then(function(results) {
-        results.forEach(function(item) {
-          console.log(item);
-        });
+      Promise.all([kinderenPromise, autoPromise]).then(function(results) {
+
+        console.log(`De kinderen: ${results[0]} en de autos: ${results[1]}`)
+
       }).catch(function(err) {
-        console.log("Failed:", err);
+        console.log("Fout:", err.message);
       });
 
-
-
-
-      // race
-
-      promise = new Promise(function(resolve, reject) {
-          setTimeout(function() {
-            resolve("Dit zou niet moeten verschijnen.");
-          }, 3000);
-      });
-
-      promise2 = new Promise(function(resolve, reject) {
-          setTimeout(function() {
-            resolve("Dit zou na 1 seconde moeten verschijnen.");
-          }, 1000);
-      });
-
-      Promise.race([promise, promise2]).then(function(result) {
-          console.log(result);
-      }); 
-
-
-      var exceptionPromise = new Promise((resolve, reject) => {  
-        resolve(4);
-      });
-
-      exceptionPromise.then((val) => val + 2)  
-       .then((val) => { throw new Error("step 2 failed!") }) 
-       .then((val) => console.log("got", val))
-       .catch((err) => console.log("error: ", err.message));
 
     </script>
   </body>

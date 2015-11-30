@@ -1,25 +1,33 @@
 <html>
 
-	<head>
+<head>
 
-		<title>04.Array.prototype.findIndex</title>
+    <title>04.Array.prototype.findIndex</title>
 
-	</head>
-
-
-	<body>
+</head>
 
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser-polyfill.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
-
-		<script type="text/babel">
+<body>
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser-polyfill.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
 
+<script type="text/babel">
 
-		</script>
+    // schrijf een functie die het eerste ECHTE object uit de argumenten teruggeeft
+    function getFirstObject() {
+        // your code here
+    }
 
-	</body>
+    var result = getFirstObject(1, 5, function () {return true;}, {message: 'Hello'}, [1, 2, 5]);
+    console.assert(result.message === 'Hello', 'De property message van het eerste gevonden object = \'Hello\'')
+
+    var result2 = getFirstObject(1, function () {return true;}, [1, 2, 5], {bericht: 'Hoi'}, 5);
+    console.assert(result2.bericht === 'Hello', 'De property bericht van het tweede gevonden object = \'Hoi\'')
+
+</script>
+
+</body>
 
 </html>

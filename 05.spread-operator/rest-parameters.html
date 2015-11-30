@@ -15,20 +15,24 @@
 
 		<script type="text/babel">
 
+            // schrijf een functie die een callback en een random aantal numerieke argumenten accepteert
+            // de callback functie moet false opleveren voor alle argumenten die niet voldoen
+            // return een array met alle elementen die WEL voldoen
 
-			// herschrijf functie addItemsToList
+            function myArgumentFilter( ) {
+                // your code here
+            }
 
-            var toDoList = [];
-            function addItemsToList(naam, ...items) {
-                console.log(`${naam} voegt dingen toe aan de lijst`);
-                toDoList.push(...items);
-            };
 
-            addItemsToList('Roel', 1,2,3,4,5,6);
-            // toDoList = [1,2,3,4,5,6]
+            // controle
+            var result = myArgumentFilter((x) => x > 5, 7,2,6,4,9,12,4);
 
-            // controles
-			console.assert(toDoList.length === 6, 'de toDoList moet 6 items bevatten');
+            console.assert(result.length === 4, 'De nieuwe array heeft 4 elementen');
+            console.assert(result[0] === 7, 'element 0 === 7');
+            console.assert(result[1] === 6, 'element 0 === 6');
+            console.assert(result[2] === 9, 'element 0 === 9');
+            console.assert(result[3] === 12, 'element 0 === 12');
+
 
 		</script>
 

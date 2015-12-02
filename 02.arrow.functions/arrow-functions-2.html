@@ -16,8 +16,8 @@
 <script type="text/babel">
 
     // fix deze functie mbv arrow functie(s?)
-    var myFunc = function (exponent) {
-        this.exponent = exponent;
+    var myFunc = function (num) {
+        this.exponent = num;
         this.doSomeMath = function (num) {
             var exp = function (num) {
                 return Math.pow(num, this.exponent);
@@ -28,7 +28,6 @@
 
     var newFunc = new myFunc(3);
     console.assert(newFunc.doSomeMath(5) === 1953128, 'Het resultaat is 1953128');
-
 
 </script>
 
